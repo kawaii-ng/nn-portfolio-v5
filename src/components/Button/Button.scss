@@ -1,0 +1,27 @@
+.button {
+
+    background: white;
+    color: black;
+    margin: .5em 1.5em;
+    padding: .8em 1.5em;
+    border-radius: 25px;
+    border: 1px solid white;
+    cursor: pointer;
+    mix-blend-mode: screen;
+    font-weight: 900;
+    font-size: 1rem;
+    backdrop-filter: blur(10px);
+    transition: all .6s .1s ease-in-out;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, .2);
+    text-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
+    text-align: center;
+
+    &:hover {
+
+        color: white;
+        background-color: transparent;
+        backdrop-filter: blur(10px);
+
+    }
+
+}
