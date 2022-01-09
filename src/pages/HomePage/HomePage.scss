@@ -1,6 +1,6 @@
 @use '../../util/variables.scss';
 
-.home-page-container {
+.home-page {
 
     position: relative;
     min-height: 100vh;
@@ -9,7 +9,7 @@
 
     .title {
 
-        font-size: 5rem;
+        font-size: 1.5rem;
         width: 80vw;
         text-align: center;
         color: white;
@@ -27,6 +27,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding: 1em;
 
         // &:first-child {
 
@@ -44,107 +45,229 @@
         
         &:nth-child(odd){
             
-            background: url('../../images/cover-01.jpeg') center center / cover fixed no-repeat;
+            background: url('../../images/cover-02.jpg') center center / cover fixed no-repeat;
             color: white;
             text-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
             box-shadow: inset 0px 20px 20px rgba(0, 0, 0, .2);
 
         }
 
-        .content {
+    }
+
+    .scroll-box {
+
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 1em;
+
+        &.--vertical {flex-direction: column; overflow-y: scroll; max-height: 70%;}
+        &.--horizontal {flex-direction: row; overflow-x: scroll; max-width: 70vw;}
+        &.--about-layout {}
+
+    }
+
+    .profile-img {
+
+        position: relative;
+        min-width: 120px;
+        min-height: 120px;
+        border-radius: 50%;
+        border: 5px solid white;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+        overflow: hidden;
+        cursor: pointer;
+
+        img {
 
             position: relative;
-            width: 50%;
-            height: 80%;
-
-            &.--about-me {
-
-                display: grid;
-                grid-template: 
-                    "title title"
-                    "profile para"
-                    "skill skill";
-                grid-column-gap: 50px;
-                justify-content: center;
-                align-items: center;
-
-                .head { grid-area: title; }
-                .para { grid-area: para; .scroll-para{ max-height: 80px; overflow-y: scroll; &::-webkit-scrollbar{width:0px;}} }
-
-                .profile-img {
-
-                    grid-area: profile;
-                    position: relative;
-                    width: 150px;
-                    height: 150px;
-                    border: 5px solid white;
-                    border-radius: 50%;
-                    box-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
-                    overflow: hidden;
-                    cursor: pointer;
-
-                    img {
-
-                        position: absolute;
-                        transform: scale(1);
-                        transition: all .6s .1s ease-in-out;
-                        width: 100%; height: inherit;
-                        object-fit: cover;
-                        filter: contrast(.8) saturate(1.2);
-
-                        &:hover {
-                            
-                            transform: scale(1.2);
-    
-                        }
-
-                    }
-
-                }
-
-                .skill-box {
-
-                    grid-area: skill;
-                    display: flex;
-                    align-items: center;            
-                    overflow-x: scroll;
-                    
-                    width: 100%;
-                    max-width: 100%;
-                    height: 150px;
-
-                    &::-webkit-scrollbar {height: 0;}
-
-
-                    .skill {
-
-                        margin: 0em 1em;
-                        padding: 1em;
-                        height: 50%;
-                        width: 100px;
-                        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-                        border-radius: 12px;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: space-evenly;
-                        font-size: 1rem;
-
-                        .icon {
-                            font-size: 2.5rem;
-                        }
-
-                    }
-
-
-                }
-
-
-            }
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1);
+            transition: all .6s .1s ease-in-out;
 
         }
 
+        &:hover img {
 
+            transform: scale(1.2);
+
+        }
+
+    }
+
+    .skill-box {
+
+        margin: 1em 0em ;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-column-gap: 1em;
+        grid-row-gap: 1em;
+        width: 100%;
+        justify-items: center;
+        
+        .skill {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 80%;
+            height: 100px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+
+            .icon { font-size: 2.5rem;}
+
+        }
+
+    }
+
+}
+
+@media screen and (min-width: 720px) {
+    
+    .home-page {
+
+        position: relative;
+        min-height: 100vh;
+        top: 0; bottom: 0;
+        left: 0; right: 0;
+    
+        .title {
+    
+            font-size: 3.5rem;
+            width: 80vw;
+            text-align: center;
+            color: white;
+            text-shadow: 0px 0px 10px rgba(0,0, 0, .5);
+    
+        }
+    
+        .section {
+    
+            position: relative;
+            width: inherit;
+            height: 100vh;
+            overflow: hidden;      
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1em;
+    
+            // &:first-child {
+    
+            //     background: url('../../../public/images/cover-01.jpeg') center center / cover fixed no-repeat;
+    
+            // }
+            
+            &:nth-child(even){
+    
+                background-color: white;
+                color: variables.$black;
+                box-shadow: 0px -20px 20px rgba(0, 0, 0, .2);
+                
+            }
+            
+            &:nth-child(odd){
+                
+                background: url('../../images/cover-02.jpg') center center / cover fixed no-repeat;
+                color: white;
+                text-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+                box-shadow: inset 0px 20px 20px rgba(0, 0, 0, .2);
+    
+            }
+    
+        }
+    
+        .scroll-box {
+    
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 1em;
+    
+            &.--vertical {flex-direction: column; overflow-y: scroll; max-height: 70%;}
+            &.--horizontal {flex-direction: row; overflow-x: scroll; max-width: 70vw;}
+            &.--about-layout {
+                display: grid;
+                grid-template-areas: 
+                    "img name name name name name name"
+                    "img para para para para para para"
+                    "skill skill skill skill skill skill skill";
+
+                max-width: 50%;
+                grid-column-gap: 50px;
+                overflow: hidden;
+                justify-items: flex-start;
+
+                .profile-img { grid-area: img;}
+                #name { grid-area: name;}
+                .scroll-para { grid-area: para; max-width: calc(100% - 20px); max-height: 100px; overflow-y: scroll; padding-right: 1em;}
+                .skill-box { grid-area: skill;}
+            }
+    
+        }
+    
+        .profile-img {
+    
+            position: relative;
+            min-width: 120px;
+            min-height: 120px;
+            max-width: 120px;
+            max-height: 120px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+            overflow: hidden;
+            cursor: pointer;
+    
+            img {
+    
+                position: relative;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transform: scale(1);
+                transition: all .6s .1s ease-in-out;
+    
+            }
+    
+            &:hover img {
+    
+                transform: scale(1.2);
+    
+            }
+    
+        }
+    
+        .skill-box {
+    
+            margin: 1em 0em ;
+            display: flex;
+            max-width: 100%;
+            overflow-x: scroll;
+
+            .skill {
+                margin: 1em 0.5em;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+                min-width: 100px;
+                min-height: 120px;
+                border-radius: 12px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+    
+                .icon { font-size: 2.5rem;}
+    
+            }
+    
+        }
+    
     }
 
 }

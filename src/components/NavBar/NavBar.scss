@@ -29,33 +29,95 @@
 
     }
 
+    .hamburger {
+        &:hover .ham-btn {
+
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+
+
+        }
+        &:hover .navbar-list {
+
+            visibility: visible;
+            opacity: 1;
+            
+        }
+    }
+
+    .ham-btn {
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: white;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        align-items: center; justify-content: center;
+        text-align: center;
+        border: 1px solid transparent;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all .6s ease-in-out;
+        visibility: visible;
+
+    }
+
     .navbar-list {
 
-        position: relative;
+        visibility: hidden;
+        position: absolute;
+        top: 60px;
+        right: 0;
         width: auto;
+        height: fit-content;
         display: flex;
+        flex-direction: column;
+        transition: all .6s ease-in-out;
+        border-radius: 12px;
+        box-shadow: 0px 0px 15px rgba(255, 255, 255, .5);
+        overflow: hidden;
+        opacity: 0;
+        backdrop-filter: blur(10px);
 
         .navbar-item {
 
+            &:first-child {
+
+                border-radius: 12px 12px 0px 0px;
+    
+            }
+            
+            &:last-child {
+
+                border-radius: 0px 0px 12px 12px;
+    
+            }
+
             position: relative;
-            margin: 0em 1em;
+            margin: 0em 0em;
+            padding: .5em 0em;
             background-color: transparent;
-            border-radius: 12px;
+            border-radius: 0px;
             width: 100px;
             height: 50px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             color: white;
-            backdrop-filter: blur(5px);
-            box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, .2);
+            backdrop-filter: blur(10px);
+            box-shadow: inset 0px 0px 0px rgba(255, 255, 255, 1);
             border: 1px transparent solid;
             cursor: pointer;
             transition: all .6s .1s ease-in-out;
     
             &:hover {
     
-                border: 1px white solid;
+                border: 1px transparent solid;
+                box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 1);
                 
             }
     
@@ -65,5 +127,141 @@
     }
 
     
+
+}
+
+@media screen and (min-width: 720px) {
+    
+    .navbar {
+
+        position: absolute;
+        z-index: 3;
+        top: 1em;
+        left: 2em; right: 2em;
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+    
+        .brand {
+    
+            position: relative;
+            margin: 0em;
+            padding: 0em;
+            height: fit-content;
+            font-size: 2.5rem;
+            color: white;
+            border-top: 1px solid white;
+            cursor: pointer;
+    
+            span {
+    
+                font-size: 1.5rem;
+                // opacity: .8;
+                opacity: 0;
+    
+            }
+    
+        }
+    
+        .hamburger {
+            &:hover .ham-btn {
+    
+                background-color: transparent;
+                border: 1px solid white;
+                color: white;
+    
+    
+            }
+            &:hover .navbar-list {
+    
+                visibility: visible;
+                opacity: 1;
+                
+            }
+        }
+    
+        .ham-btn {
+    
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: white;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center; justify-content: center;
+            text-align: center;
+            border: 1px solid transparent;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all .6s ease-in-out;
+            visibility: hidden;
+    
+        }
+    
+        .navbar-list {
+    
+            visibility: visible;
+            position: relative;
+            top: 0px;
+            right: 0;
+            width: auto;
+            height: fit-content;
+            display: flex;
+            flex-direction: row;
+            transition: all .6s ease-in-out;
+            border-radius: 12px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, .5);
+            overflow: hidden;
+            opacity: 1;
+            backdrop-filter: blur(10px);
+    
+            .navbar-item {
+    
+                &:first-child {
+    
+                    border-radius: 12px 0px 0px 12px;
+        
+                }
+                
+                &:last-child {
+    
+                    border-radius: 0px 12px 12px 0px;
+        
+                }
+    
+                position: relative;
+                margin: 0em 0em;
+                padding: .5em 0em;
+                background-color: transparent;
+                border-radius: 0px;
+                // border: 1px transparent solid;
+                width: 100px;
+                height: 50px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                backdrop-filter: blur(10px);
+                box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0);
+                cursor: pointer;
+                transition: all .6s .1s ease-in-out;
+                
+                &:hover {
+                    
+                    box-shadow: inset 0px 0px 10px 0px rgba(255, 255, 255, 1);
+                    border: 1px solid transparent;
+                    
+                }
+        
+            }
+    
+    
+        }
+    
+        
+    
+    }
 
 }
