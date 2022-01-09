@@ -14,7 +14,7 @@ function ProjectCard(props) {
             </div>
             <p>{project.brief}</p>
             <div className='button-box'>
-                <Button title="View More" link={`project/${project.id}`}/>
+                <Button title="View More" link={`/project/${project.id}`}/>
             </div>
         </div>
     )

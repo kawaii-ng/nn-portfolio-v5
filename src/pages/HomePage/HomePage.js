@@ -37,7 +37,7 @@ function HomePage() {
 
             <div className="section --center">
                 <h1 className='title'>Welcome to my Portfolio!</h1>
-                <Button title="View Portfolio" link="projects"></Button>
+                <Button title="View Portfolio" link="/projects"></Button>
             </div>
 
             <div className="section" id="about-me">
@@ -93,7 +93,7 @@ function HomePage() {
                         ))
                     }
                 </div>
-                <Button title="More Projects" link="projects"></Button>
+                <Button title="More Projects" link="/projects"></Button>
             </div>
         </div>
     )

@@ -8,7 +8,7 @@ function PreviewCard(props) {
     const navigate = useNavigate()
 
     return (
-        <div className='preview-card' onClick={()=>{navigate(`/project/${project.id}`)}}>
+        <div className='preview-card' onClick={()=>{navigate(`/project/${project.id}`); window.scrollTo(0, 0);}}>
             <div className="view">
                 View More
             </div>
