@@ -1,9 +1,13 @@
 import { faBars, faHamburger } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import './NavBar.scss'
 
 function NavBar() {
+
+    const navigate = useNavigate()
+
     return (
         <div className='navbar'>
 
@@ -16,9 +20,8 @@ function NavBar() {
                     <FontAwesomeIcon icon={faBars}/>
                 </div>
                 <div className="navbar-list">
-                    <div className="navbar-item">Home</div>
-                    <div className="navbar-item">About Me</div>
-                    <div className="navbar-item">Portfolio</div>
+                    <div className="navbar-item" onClick={()=>{navigate('/home')}}>Home</div>
+                    <div className="navbar-item" onClick={()=>{navigate('/projects')}}>Portfolio</div>
                 </div>
             </div>
 

@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.scss';
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 
@@ -13,16 +12,16 @@ function App() {
     <>
       <Router>
         
-        <NavBar></NavBar>
+        <NavBar/>
         
         <Routes>
           <Route path='/' element={<Navigate to="/home"/>}></Route>
           <Route path='/home' element={<HomePage/>} exact></Route>
           <Route path='/projects' element={<PortfolioPage />} exact></Route>
-          <Route path='/project/:project-id' element={<ProjectPage />} exact></Route>
+          <Route path='/project/:id' element={<ProjectPage/>} ></Route>
         </Routes>
 
-        <Footer></Footer>
+        <Footer/>
 
       </Router>
     </>

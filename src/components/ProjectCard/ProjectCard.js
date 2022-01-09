@@ -3,15 +3,18 @@ import './ProjectCard.scss'
 import fakeImg from '../../images/fake-img-01.PNG'
 import Button from '../Button/Button'
 
-function ProjectCard() {
+function ProjectCard(props) {
+
+    const project = props.project
+
     return (
         <div className='project-card'>
             <div className='project-img'>
-                <img src={fakeImg} alt="" />
+                <img src={project.img} alt="" />
             </div>
-            <p>This is a project to introduce myself.This is a project to introduce myself.This is a project to introduce myself.This is a project to introduce myself.This is a project to introduce myself.</p>
+            <p>{project.brief}</p>
             <div className='button-box'>
-                <Button title="View More"></Button>
+                <Button title="View More" link={`project/${project.id}`}/>
             </div>
         </div>
     )

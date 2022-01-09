@@ -1,13 +1,19 @@
 import React from 'react'
 import './PreviewCard.scss'
+import { useNavigate } from 'react-router-dom'
 
-import fakeImg from '../../../src/images/fake-img-01.PNG'
+function PreviewCard(props) {
 
-function PreviewCard() {
+    const project = props.project
+    const navigate = useNavigate()
+
     return (
-        <div className='preview-card'>
-            <h1>card</h1>
-            {/* <img src={fakeImg} alt="" /> */}
+        <div className='preview-card' onClick={()=>{navigate(`/project/${project.id}`)}}>
+            <div className="view">
+                View More
+            </div>
+            <img src={project.img} alt="" />
+            <div className="card-title">{project.name}</div>
         </div>
     )
 }

@@ -1,0 +1,200 @@
+.project-page {
+
+    position: relative;
+    margin: 0; padding: 0;
+    padding-top: 15vh;
+    padding-bottom: 15vh;
+    width: 100vw;
+    height: fit-content;
+    min-height: 100vh;
+    background: black;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .project-img {
+        width: -webkit-fill-available;
+        height: fit-content;
+        overflow: hidden;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, .5);
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .project {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        .section {
+
+            margin: 1em;
+            width: 80%;
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, .5);
+            padding: 1em;
+            border-radius: 12px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, .5);
+
+            &:first-child {
+
+                backdrop-filter: blur(0px);
+                background: rgba(0, 0, 0, 0);
+                box-shadow: 0px 0px 00px rgba(0, 0, 0, .5);
+
+                div {
+
+                    display: flex;
+                    .button { margin-left: 0;}
+
+                }
+
+            }
+
+            h1 {
+
+                text-shadow: 0px 0px 15px rgba(255, 255, 255, .6);
+                
+            }
+            
+            h3 {
+                
+                border-bottom: 1px solid orange;
+                text-shadow: 0px 0px 10px rgba(255, 255, 255, .6);
+
+            }
+
+            h1 span,h3 span {
+
+                color: orange;
+
+            }
+
+        }
+
+    }
+
+}
+
+@media screen and (min-width: 1070px) {
+    
+    .project-page {
+
+        position: relative;
+        margin: 0; padding: 0;
+        padding-top: 15vh;
+        padding-bottom: 15vh;
+        width: 100vw;
+        height: fit-content;
+        min-height: 100vh;
+        background-color: black;
+        color: white;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    
+        .project-img {
+            position: fixed;
+            z-index: 3;
+            width: 30%;
+            height: 100%;
+            overflow: hidden;
+            box-shadow: 0px 0px 0px rgba(255, 255, 255, .5);
+            transition: all .6s .1s ease-in-out;
+            cursor: pointer;
+            img {
+                width: 70vw;
+                height: calc(100vh - 15vh);
+                object-fit: contain;
+            }
+
+            &:hover {
+
+                
+
+            }
+
+        }
+    
+        .project {
+    
+            position: relative;
+            margin-left: 35%;
+            display: grid;
+            grid-template-areas: 
+                "project project"
+                "features skills"
+                "functions skills"
+                "tools depends";
+            align-items: flex-start;
+            grid-row-gap: 50px;
+            grid-column-gap: 20px;
+            width: 55%;
+
+            #project-name{grid-area: project;}
+            #project-tools{grid-area: tools;}
+            #project-features{grid-area: features;}
+            #project-functions{grid-area: functions;}
+            #project-skills{grid-area: skills;}
+            #project-depends{grid-area: depends;}
+    
+            .section {
+    
+                margin: 1em;
+                width: 80%;
+                height: fit-content;
+                min-height: 90%;
+                backdrop-filter: blur(10px);
+                background: rgba(0, 0, 0, .5);
+                padding: 1em;
+                border-radius: 12px;
+                box-shadow: 0px 0px 10px rgba(255, 255, 255, .5);
+    
+                &:first-child {
+    
+                    backdrop-filter: blur(0px);
+                    background: rgba(0, 0, 0, 0);
+                    box-shadow: 0px 0px 00px rgba(0, 0, 0, .5);
+    
+                    div {
+    
+                        display: flex;
+                        .button { margin-left: 0;}
+    
+                    }
+    
+                }
+    
+                h1 {
+    
+                    text-shadow: 0px 0px 15px rgba(255, 255, 255, .6);
+                    
+                }
+                
+                h3 {
+                    
+                    border-bottom: 1px solid orange;
+                    text-shadow: 0px 0px 10px rgba(255, 255, 255, .6);
+    
+                }
+    
+                h1 span,h3 span {
+    
+                    color: orange;
+    
+                }
+    
+            }
+    
+        }
+    
+    }
+
+}
