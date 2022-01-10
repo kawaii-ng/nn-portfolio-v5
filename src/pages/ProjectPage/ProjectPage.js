@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import './ProjectPage.scss'
-import fakeImg from '../../images/fake-img-01.PNG'
 import Button from '../../components/Button/Button'
 import { faCode, faLink } from '@fortawesome/free-solid-svg-icons'
 import { useParams } from 'react-router-dom'

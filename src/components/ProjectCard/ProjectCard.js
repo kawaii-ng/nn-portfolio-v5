@@ -1,6 +1,5 @@
 import React from 'react'
 import './ProjectCard.scss'
-import fakeImg from '../../images/fake-img-01.PNG'
 import Button from '../Button/Button'
 
 function ProjectCard(props) {
