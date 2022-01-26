@@ -22,6 +22,7 @@ function NavBar() {
                 <div className="navbar-list">
                     <div className="navbar-item" onClick={()=>{navigate('/home')}}>Home</div>
                     <div className="navbar-item" onClick={()=>{navigate('/projects')}}>Portfolio</div>
+                    <div className="navbar-item" onClick={()=>{navigate('/admin')}}>Admin</div>
                 </div>
             </div>
 
