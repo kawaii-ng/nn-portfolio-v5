@@ -2,6 +2,7 @@
 
     background: url('../../images/cover-02.jpg') center center / cover fixed no-repeat;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;

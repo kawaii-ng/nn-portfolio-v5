@@ -8,6 +8,7 @@ function AdminPage() {
 
     <div className="admin-page">
 
+        <h1 style={{margin: "1em"}}>This Function is Coming Soon...</h1>
         <LoginForm/>
 
     </div>
